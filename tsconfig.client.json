@@ -1,0 +1,23 @@
+{
+  "include": ["src/client",
+    "Globals.d.ts"
+  ],
+  "compilerOptions": {
+    "module": "es6", // generate ES modules
+    "target": "es5", // target ES5 API
+    "jsx": "react", // compile JSX to React.createElement statements for browser
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true, // allow imports of modules in ES format
+    "moduleResolution": "node",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "typeRoots": [
+      "Globals.d.ts", "node_modules/@types"]
+  },
+  "exclude": []
+}
