@@ -1,7 +1,11 @@
 module.exports = {
-  content: ["src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+    content: [
+        "./src/client/**/*.{js,ts,jsx,tsx}",
+        "./src/server/**/*.{js,ts,jsx,tsx}",
+        "./src/server/views/client.ejs"
+    ],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
 }

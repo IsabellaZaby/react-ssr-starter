@@ -26,6 +26,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(css|scss)$/,
+                exclude: /\.global.css$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -41,7 +42,8 @@ module.exports = {
                                 localIdentName:  '[hash:base64:6]'
                             },
                             esModule: true,
-                            importLoaders: 1
+                            importLoaders: 2,
+                            sourceMap: true
                         },
                     },
                     {
@@ -51,6 +53,16 @@ module.exports = {
                         loader: 'postcss-loader'
                     }
                 ]
+            },
+            {
+                test: /\.global.css$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
+                    'css-loader',
+                    'postcss-loader',
+                ],
             },
             {
                 test: /\.tsx?$/,
